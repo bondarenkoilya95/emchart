@@ -57,7 +57,7 @@ public class EMChart: UIView {
         
         self.addSubview(xInfoBar)
         
-        let top = NSLayoutConstraint(item: xInfoBar!, attribute: .top, relatedBy: .equal, toItem: netView!, attribute: .top, multiplier: 1, constant: 0)
+        let top = NSLayoutConstraint(item: xInfoBar!, attribute: .top, relatedBy: .equal, toItem: netView!, attribute: .bottom, multiplier: 1, constant: 0)
         let left = NSLayoutConstraint(item: xInfoBar!, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
         let bottom = NSLayoutConstraint(item: xInfoBar!, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0)
         let height = NSLayoutConstraint(item: xInfoBar!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 22)
