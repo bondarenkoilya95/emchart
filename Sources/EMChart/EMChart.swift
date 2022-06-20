@@ -8,6 +8,8 @@ public class EMChart: UIView {
     
     private var netView: NetView!
     
+    private var dataView: UIView!
+    
     // MARK: - Init methods
     
     public override init(frame: CGRect) {
@@ -28,6 +30,7 @@ public class EMChart: UIView {
         self.translatesAutoresizingMaskIntoConstraints = false
         
         configureNetView()
+        configureDataView()
         
         configureXInfoBar()
         configureYInfoBar()
@@ -47,6 +50,22 @@ public class EMChart: UIView {
         let left = NSLayoutConstraint(item: netView!, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
         
         NSLayoutConstraint.activate([top, left])
+    }
+    
+    private func configureDataView() {
+        dataView = UIView(frame: netView.bounds)
+        dataView.translatesAutoresizingMaskIntoConstraints = false
+        
+        dataView.backgroundColor = .orange
+        
+        self.addSubview(dataView)
+        
+        let top = NSLayoutConstraint(item: dataView!, attribute: .top, relatedBy: .equal, toItem: netView!, attribute: .top, multiplier: 1, constant: 0)
+        let bottom = NSLayoutConstraint(item: dataView!, attribute: .bottom, relatedBy: .equal, toItem: netView!, attribute: .bottom, multiplier: 1, constant: 0)
+        let left = NSLayoutConstraint(item: dataView!, attribute: .leading, relatedBy: .equal, toItem: netView!, attribute: .leading, multiplier: 1, constant: 4)
+        let right = NSLayoutConstraint(item: dataView!, attribute: .trailing, relatedBy: .equal, toItem: netView!, attribute: .trailing, multiplier: 1, constant: 4)
+        
+        NSLayoutConstraint.activate([top, bottom, left, right])
     }
     
     private func configureXInfoBar() {
