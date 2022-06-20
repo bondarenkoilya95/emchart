@@ -43,8 +43,8 @@ public class EMChart: UIView {
         
         self.addSubview(netView)
         
-        let top = NSLayoutConstraint(item: netView!, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 0, constant: 6)
-        let left = NSLayoutConstraint(item: netView!, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 0, constant: 0)
+        let top = NSLayoutConstraint(item: netView!, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 6)
+        let left = NSLayoutConstraint(item: netView!, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
         
         NSLayoutConstraint.activate([top, left])
     }
@@ -57,10 +57,10 @@ public class EMChart: UIView {
         
         self.addSubview(xInfoBar)
         
-        let top = NSLayoutConstraint(item: xInfoBar!, attribute: .top, relatedBy: .equal, toItem: netView!, attribute: .top, multiplier: 0, constant: 0)
-        let left = NSLayoutConstraint(item: xInfoBar!, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 0, constant: 0)
-        let bottom = NSLayoutConstraint(item: xInfoBar!, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 0, constant: 0)
-        let height = NSLayoutConstraint(item: xInfoBar!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 22)
+        let top = NSLayoutConstraint(item: xInfoBar!, attribute: .top, relatedBy: .equal, toItem: netView!, attribute: .top, multiplier: 1, constant: 0)
+        let left = NSLayoutConstraint(item: xInfoBar!, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
+        let bottom = NSLayoutConstraint(item: xInfoBar!, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0)
+        let height = NSLayoutConstraint(item: xInfoBar!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 22)
         
         NSLayoutConstraint.activate([top, left, bottom, height])
     }
@@ -73,12 +73,12 @@ public class EMChart: UIView {
         
         self.addSubview(yInfoBar)
         
-        let top = NSLayoutConstraint(item: yInfoBar!, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 0, constant: 0)
-        let left = NSLayoutConstraint(item: yInfoBar!, attribute: .leading, relatedBy: .equal, toItem: netView, attribute: .trailing, multiplier: 0, constant: 0)
-        let right = NSLayoutConstraint(item: yInfoBar!, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 0, constant: 0)
-        let bottom = NSLayoutConstraint(item: yInfoBar!, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 0, constant: 0)
-        let width = NSLayoutConstraint(item: yInfoBar!, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 50)
-        let left2 = NSLayoutConstraint(item: yInfoBar!, attribute: .leading, relatedBy: .equal, toItem: xInfoBar, attribute: .trailing, multiplier: 0, constant: 0)
+        let top = NSLayoutConstraint(item: yInfoBar!, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
+        let left = NSLayoutConstraint(item: yInfoBar!, attribute: .leading, relatedBy: .equal, toItem: netView, attribute: .trailing, multiplier: 1, constant: 0)
+        let right = NSLayoutConstraint(item: yInfoBar!, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
+        let bottom = NSLayoutConstraint(item: yInfoBar!, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0)
+        let width = NSLayoutConstraint(item: yInfoBar!, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 50)
+        let left2 = NSLayoutConstraint(item: yInfoBar!, attribute: .leading, relatedBy: .equal, toItem: xInfoBar, attribute: .trailing, multiplier: 1, constant: 0)
         
         NSLayoutConstraint.activate([top, left, left2, right, bottom, width])
     }
