@@ -1,0 +1,2 @@
+# emchart
+Сhat rendering library
