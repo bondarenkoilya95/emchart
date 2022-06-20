@@ -39,6 +39,8 @@ public class EMChart: UIView {
         netView = NetView(frame: CGRect(x: 0, y: 0, width: self.frame.width - 50, height: self.frame.height - 24))
         netView.translatesAutoresizingMaskIntoConstraints = false
         
+        netView.backgroundColor = .yellow
+        
         self.addSubview(netView)
         
         let top = NSLayoutConstraint(item: netView!, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 0, constant: 6)
@@ -50,6 +52,8 @@ public class EMChart: UIView {
     private func configureXInfoBar() {
         xInfoBar = XInfoBar(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 40))
         xInfoBar.translatesAutoresizingMaskIntoConstraints = false
+        
+        xInfoBar.backgroundColor = .red
         
         self.addSubview(xInfoBar)
         
@@ -64,6 +68,10 @@ public class EMChart: UIView {
     private func configureYInfoBar() {
         yInfoBar = YInfoBar(frame: CGRect(x: 0, y: 0, width: 50, height: self.frame.height))
         yInfoBar.translatesAutoresizingMaskIntoConstraints = false
+        
+        yInfoBar.backgroundColor = .brown
+        
+        self.addSubview(yInfoBar)
         
         let top = NSLayoutConstraint(item: yInfoBar!, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 0, constant: 0)
         let left = NSLayoutConstraint(item: yInfoBar!, attribute: .leading, relatedBy: .equal, toItem: netView, attribute: .trailing, multiplier: 0, constant: 0)
