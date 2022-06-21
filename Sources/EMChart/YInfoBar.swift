@@ -15,6 +15,22 @@ class YInfoBar: UIView {
     
     private var labels: [UILabel] = []
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        guard labels.count > 0 else { return }
+        
+        let step = (Int(self.frame.height) - 50)/currentCountOfLines
+        
+        for (index, label) in labels.enumerated() {
+            if let constraint = label.constraints.first(where: { c in
+                return c.identifier == "top_margin"
+            }) {
+                constraint.constant = CGFloat(index*step)
+            }
+        }
+    }
+    
     func drawData(withCountOfLines lines: Int, maxValue: Float) {
         self.currentMaxValue = maxValue
         if currentCountOfLines == lines {
@@ -36,9 +52,11 @@ class YInfoBar: UIView {
             label.text = value
             label.sizeToFit()
             
+            labels.append(label)
             addSubview(label)
             
             let top = NSLayoutConstraint(item: label, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: CGFloat(index*step))
+            top.identifier = "top_margin"
             let left = NSLayoutConstraint(item: label, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 4)
             let right = NSLayoutConstraint(item: label, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0)
             let height = NSLayoutConstraint(item: label, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 10)
