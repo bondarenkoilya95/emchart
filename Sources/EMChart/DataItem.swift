@@ -16,7 +16,7 @@ public struct DataItem {
     
     private(set) var color: UIColor?
     
-    init(title: String, value: Float, color: UIColor? = nil) {
+    public init(title: String, value: Float, color: UIColor? = nil) {
         self.title = title
         self.value = value
         self.color = color

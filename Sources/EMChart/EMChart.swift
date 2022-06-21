@@ -10,7 +10,7 @@ public class EMChart: UIView {
     
     private var dataView: UIView!
     
-    var data: [DataItem]? {
+    public var data: [DataItem]? {
         didSet {
             reloadData()
         }
