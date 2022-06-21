@@ -32,6 +32,7 @@ class YInfoBar: UIView {
         
         for (index, value) in values.enumerated() {
             let label = initLabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
             label.text = value
             label.sizeToFit()
             
